@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./favicon.ico" />
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./docs/docs.css">
     <script src="./bootstrap/js/bootstrap.bundle.js"></script>
     <title>❤畅畅学习❤ </title>
 </head>
@@ -45,5 +46,112 @@
           </div>
         </div>
       </nav>
+
+      <div style="height: 30px;"></div>
+      <main class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+              变量
+            </div>
+            <div class="card-body">
+              <div class="alert alert-primary d-flex align-items-center" role="alert">
+                <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                  <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </svg>
+                <div>
+                    变量就是存储数据(值)的地方，变量名就是存储数据的容器,变量可以在不知道具体值得时候提前使用 
+                </div>
+              </div>
+              <ul class="list-group">
+                <li class="list-group-item " aria-current="true">
+                    <strong style="color: rgb(236, 59, 59);">注意</strong> : &nbsp; 变量的声明要放在所有执行代码的最前面
+                </li>
+                <li class="list-group-item " aria-current="true">
+                    <strong style="color: aqua;">变量类型</strong> : &nbsp; String(字符类型) , Integer(数字类型)
+                </li>
+                <li class="list-group-item">变量值为String时需要使用<span style="color: #f40;">""</span>包裹, 只有声明为Integer的值才能进行数学运算</li>
+                <li class="list-group-item">
+                    <strong style="color: aqua;">变量声明</strong> : &nbsp; <span style="font-size: 14px ; color: #1ed3a6;">Dim 变量名 As 变量类型 </span>
+                    <code> 
+                        <pre>
+            范例: 
+                        Sub test()
+                            Dim name As String ' 定义(声明)变量name ,类型是字符
+                            Dim age As Integer ' 定义(声明)变量age ,类型是数字
+                        End Sub    
+                        </pre> 
+                    </code>
+                </li>
+    
+                <li class="list-group-item">
+                    <strong style="color: aqua;">变量赋值</strong> : &nbsp;  <span style="font-size: 14px ; color: #1ed3a6;">变量名 = 需要设置的变量值 </span>
+                    <br/>
+                    <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name = "张三" '设置变量name的值是 张三</code>
+                </li>
+                <li class="list-group-item">
+                    <strong style="color: aqua;">变量值修改</strong> : &nbsp; <span style="font-size: 14px ; color: #1ed3a6;">变量名 = 需要修改的值 </span>
+                    <br/>
+                    <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name = "李四" '修改变量name的值为 李四</code>
+                </li>
+                <li class="list-group-item">
+                   变量的赋值和修改形式一致, 第一次设置变量值叫赋值,之后再设置变量值叫修改  , <span style="color: #f40;">设置变量值得时候一定是变量名在左变量值在右</span>
+                </li>
+                <!-- <li class="list-group-item">And a fifth one</li> -->
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">完整例子: </div>
+                      <code>
+                        <pre>
+                            {
+                                Sub test()
+                                Dim name As String ' 定义变量name
+                                Dim age As Integer ' 定义变量age
+                            
+                                name = "张三" ' 为变量设置值
+                                age = 18 '为变量设置值
+                            
+                                [A1] = name  ' 使用变量name的值,修改A1单元格的值为变量name的值
+                                [A2] = age ' 使用变量的值,修改A2丹阳的值为变量age的值
+                            
+                                name = "李四" '修改变量的值
+                                age = 20 '修改变量的值
+                            
+                                [B1] = name '使用变量name修改之后的值,设置到B1单元格
+                                [B2] = age ' 使用变量age修改之后的值,色值到B2单元格
+                                End Sub
+                            }
+                        </pre>
+                      </code>
+                      以上代码执行完毕后excel表格如下,代码中的(单引号)<strong style="font-size: 18px;color: rgb(243, 26, 189);">'</strong>表示注释,vba程序会忽略<strong style="font-size: 18px;color: rgb(243, 26, 189);">'</strong>后面的内容:
+                      <br/>
+                      <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">A</th>
+                              <th scope="col">B</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>张三</td>
+                              <td>李四</td>
+                           
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>18</td>
+                              <td>20</td>
+                           
+                          </tbody>
+                    </table>
+                    </div>
+                    <span class="badge bg-primary rounded-pill">1</span>
+                  </li>
+              </ul>
+            </div>
+          </div>
+      </main>
 </body>
 </html>
